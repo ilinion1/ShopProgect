@@ -1,8 +1,8 @@
 package com.stt.shopprogect.domain
 
-class GetShopItemUseCase(){
+class GetShopItemUseCase(private val shopListRepository: ShopListRepository){
 
-    fun getShopItem(ShopItem: ShopItem): ShopItem{
-        TODO()
+    fun getShopItem(shopItem: ShopItem): ShopItem{
+        return shopListRepository.getShopItem(shopItem)
     }
 }

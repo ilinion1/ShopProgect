@@ -1,8 +1,8 @@
 package com.stt.shopprogect.domain
 
-class EditShopItemUseCase {
+class EditShopItemUseCase(private val shopListRepository: ShopListRepository) {
 
-    fun editShopItem(ShopItem: ShopItem){
-        TODO()
+    fun editShopItem(shopItem: ShopItem){
+        shopListRepository.editShopItem(shopItem)
     }
 }
