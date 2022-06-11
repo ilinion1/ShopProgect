@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">ShopProgect</string>
     <string name="save">Save</string>
+    <string name="error_input_count">error</string>
+    <string name="error_input_name">error</string>
 </resources>

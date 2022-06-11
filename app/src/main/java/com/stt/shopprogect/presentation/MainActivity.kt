@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.stt.shopprogect.databinding.ActivityMainBinding
-import com.stt.shopprogect.domain.ShopItem
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -26,6 +25,9 @@ class MainActivity : AppCompatActivity() {
         setupLongClickListener()
         setupClickListener()
         setupSwipeListener()
+        binding.floatBar.setOnClickListener {
+            startActivity(ShopItemActivity.newIntentAddItem(this))
+        }
     }
 
     private fun setupSwipeListener(){
@@ -52,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun setupClickListener() {
         adapter.shopItemClickListener = {
-            Log.d("test4", "$it")
+            startActivity(ShopItemActivity.newIntentEditItem(this, it.id))
         }
     }
 
